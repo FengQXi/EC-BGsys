@@ -1,21 +1,38 @@
 <template>
-    <div class="chart" ref="chart"></div>
+    <el-row :gutter="10">
+        <el-col :span="18">
+            <div class="chart" ref="chart"></div>
+        </el-col>
+        <el-col :span="6">
+            <h3>门店销售额排名</h3>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </el-col>
+    </el-row>
 </template>
 
 <script>
 import * as echarts from "echarts"
 
 export default {
-    name: "BarChart",
+    name: "MiddleBarChart",
     props: ["barData", "barTitle"],
     data() {
         return {
-
+            myCharts: null,
         }
     },
     mounted() {
-        let myCharts = echarts.init(this.$refs.chart)
-        myCharts.setOption({
+        // 初始化实例到vc上
+        this.myCharts = echarts.init(this.$refs.chart)
+        this.myCharts.setOption({
             title: {
                 text: this.barTitle
             },
@@ -59,8 +76,11 @@ export default {
 </script>
 
 <style scoped>
+.el-col {
+    height: 300px;
+}
 .chart {
     width: 100%;
-    height: 300px;
+    height: 100%;
 }
 </style>
