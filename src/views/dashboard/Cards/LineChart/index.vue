@@ -1,7 +1,5 @@
 <template>
-    <div class="chart" ref="chart">
-
-    </div>
+    <div class="chart" ref="chart"></div>
 </template>
 
 <script>
@@ -48,7 +46,7 @@ export default {
             ],
             // 左右上下无缝
             grid: {
-                left: 0, top: 0, right: 0, bottom: 0,
+                left: -20, top: 0, right: -20, bottom: 0, 
             }
         })
     },
