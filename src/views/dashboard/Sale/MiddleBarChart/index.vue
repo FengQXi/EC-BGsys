@@ -71,6 +71,9 @@ export default {
                 }
             ]
         })
+        // window.addEventListener('resize',function () {//执行
+        //     this.data.myCharts.resize();
+        // })
     },
 }
 </script>

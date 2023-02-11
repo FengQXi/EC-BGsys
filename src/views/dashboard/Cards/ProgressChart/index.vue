@@ -10,8 +10,8 @@ import * as echarts from "echarts"
 export default {
     name: "ProgressChart",
     mounted() {
-        let lineChart = echarts.init(this.$refs.chart)
-        lineChart.setOption({
+        let progressChart = echarts.init(this.$refs.chart)
+        progressChart.setOption({
             xAxis: {
                 show: false,
                 min: 0, // 最小值与最大值
@@ -37,6 +37,9 @@ export default {
             grid: {
                 left: 0, top: 0, right: 0, bottom: 0,
             }
+        })
+        window.addEventListener('resize',function () {//执行
+            progressChart.resize();
         })
     },
 }

@@ -8,8 +8,8 @@ import * as echarts from "echarts"
 export default {
     name: "BarChart",
     mounted() {
-        let lineChart = echarts.init(this.$refs.chart)
-        lineChart.setOption({
+        let barChart = echarts.init(this.$refs.chart)
+        barChart.setOption({
             xAxis: {
                 show: false,
                 type: "category",
@@ -32,6 +32,9 @@ export default {
             tooltip: {
 
             }
+        })
+        window.addEventListener('resize',function () {//执行
+            barChart.resize();
         })
     },
 }
